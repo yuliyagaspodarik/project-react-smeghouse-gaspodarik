@@ -4,10 +4,12 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useRouteMatch,
+  useParams,
 } from "react-router-dom";
 
-import { Catalog } from "../Catalog/Catalog.js";
+import { Products } from "../Products/Products.js";
 import { Favorite } from "../Favorite/Favorite.js";
 import { Login } from "../Login/Login.js";
 import { Main } from "../Main/Main.js";
@@ -22,7 +24,7 @@ export const RouterApp = () => (
             <Link to="/">Главная</Link>
           </li>
           <li>
-            <Link to="/catalog">Каталог</Link>
+            <Link to="/products">Каталог</Link>
           </li>
           <li>
             <Link to="/login">Авторизоваться</Link>
@@ -37,8 +39,8 @@ export const RouterApp = () => (
       </nav>
 
       <Switch>
-        <Route path="/catalog">
-          <Catalog/>
+        <Route path="/products">
+          <Products/>
         </Route>
         <Route path="/login">
           <Login/>
