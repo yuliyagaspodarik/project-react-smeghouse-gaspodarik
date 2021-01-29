@@ -1,0 +1,84 @@
+.footer {
+    background-color: black;
+    color: white;
+    font-family: 'Caveat', cursive;
+}
+
+.footer__title {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid gray;
+    font-size: 1.5rem;
+}
+
+.footer__title,
+.footer__rights {
+    border-top: 1px solid gray;
+    color: gray;
+    text-align: center;
+}
+
+.footer__info {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.footer__info h5 {
+    color: gray;
+}
+
+.footer__info ul {
+    margin: 0.5rem;
+    padding-left: 0;
+}
+
+.footer__info li {
+    list-style: none;
+    font-size: 1rem;
+    text-align: left;
+    font-family: 'Poiret One', cursive;
+}
+
+.footer__info a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer__contacts-item {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.footer__contacts img {
+    width: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 43rem) {
+    .footer__info li {
+        font-size: 0.8rem;
+    }
+
+    .footer__contacts img {
+        width: 1.2rem;
+        margin-right: 0.5rem;
+    }
+}
+
+@media (max-width: 25rem) {
+    .footer__contacts ul {
+        padding: 0;
+    }
+
+    .footer__contacts-item span,
+    .footer__rights {
+        font-size: 0.7rem;
+    }
+
+    .footer__contacts img {
+        width: 1rem;
+    }
+}
