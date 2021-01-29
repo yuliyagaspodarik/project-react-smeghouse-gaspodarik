@@ -1,0 +1,179 @@
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 2rem;
+    background: black;
+    border-bottom: 20px solid #b7b7b7;
+    z-index: 100;
+    font-family: Calibri, sans-serif;
+}
+
+.header__title {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.header__title span {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+.header__menu li,
+.header__buttons li {
+    list-style: none;
+    display: inline-block;
+}
+
+.header__menu {
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    padding-left: 0;
+}
+
+.header__buttons {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    padding-left: 0;
+}
+
+.header__buttons a,
+.header__menu a {
+    margin: 1rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.header__menu a {
+    font-family: 'Caveat', cursive;
+}
+
+.header__menu a:hover {
+    border-bottom: 1px solid white;
+}
+
+.header__search {
+    display: inline-block;
+    border-bottom: 1px solid white;
+    margin: 0 0 0 1rem;
+    padding: 0;
+    background: black;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.header__search input {
+    border: none;
+    background: black;
+    color: white;
+    font-size: 1rem;
+}
+
+.header__search input:focus {
+    outline: none;
+}
+
+.header__search span:before {
+    content: "\f002";
+    color: white;
+    font-family: FontAwesome;
+}
+
+.header__search input::-webkit-input-placeholder {
+    color: white;
+    font-family: 'Poiret One', cursive;
+}
+
+.header__search input::-moz-placeholder {
+    color: white;
+}
+
+.header__stock {
+    display: block;
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: red;
+    font-family: 'Poiret One', cursive;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.fa-shopping-cart {
+    position: relative;
+}
+
+@media (max-width: 40rem) {
+    .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    .header__menu,
+    .header__buttons {
+        position: relative;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    .header__title {
+        margin: 0;
+    }
+
+    .header__search {}
+}
+
+@media (max-width: 25rem) {
+    .header__menu {
+        left: 0;
+    }
+
+    .header__buttons {
+        right: 0;
+    }
+
+    .header__title {
+        padding: 0;
+        font-size: 1.2rem;
+    }
+
+    .header a {
+        margin: 0.2rem;
+        font-size: 1rem;
+    }
+
+    .header__stock {
+        right: 0;
+    }
+
+    .header__search {
+        margin: 0.2rem;
+        padding: 0;
+    }
+
+    .header__search input {
+        width: 80%;
+    }
+}
+
+@media (max-width: 12rem) {
+    .header {
+        padding: 0;
+    }
+}
