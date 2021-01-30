@@ -1,6 +1,10 @@
 import React from 'react';
 
-export const Home = (props) => (
+export const Home = (props) => {
+  console.log('home',props);
+  return (
   <main>
     <h2>Home</h2>
-    <p>{props.products}</p></main>);
+    {props.products}
+  </main>
+)};

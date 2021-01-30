@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import "./App.css";
 import { Header } from "./Header/Header";
@@ -6,14 +7,20 @@ import { Main } from "./Main/Main";
 import { Footer } from "./Footer/Footer";
 
 function App(props) {
+  console.log('app',props);
   return (
     <React.Fragment>
-      <p>App {props.products}</p>
       <Header />
-      <Main {...props} />
+      <Main products={props.products} />
       <Footer />
     </React.Fragment>
   );
 }
 
-export default App;
+const mapStateToProps = function (state) {
+  return {
+    products: state
+  }
+};
+
+export default connect(mapStateToProps)(App);

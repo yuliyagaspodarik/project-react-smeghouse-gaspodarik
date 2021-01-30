@@ -1,16 +1,15 @@
-const initialState = {
-  products: [],
-  filters: [],
+const initialState = [];
+  /*filters: [],
   favorites: [],
   stock: [],
-  users: []
-};
+  users: []*/
+
 
 export const reducer = (state  = initialState, action) => {
   switch (action.type) {
     case "SET_STATE":
-      console.log('red', action.payload.state);
-      return {...state, ...action.payload.state};
+      console.log('reducer', action.payload.state);
+       return state.concat(action.payload.state);
     case "CHECK_FILTER": break;
     case "ADD_TO_FAVORITES": break;
     case "ADD_TO_STOCK": break;
