@@ -27,19 +27,23 @@ export const Footer = () => {
             text: 255555555,
             url: "/",
           }
-        ]
+        ],
+        id: 101
       },
       {
         title: "Компания",
-        content: [{url: "/", text: "О нас"}, {url: "/", text: "Центры продаж"}, {url: "/", text: "Партнеры"}]
+        content: [{url: "/", text: "О нас"}, {url: "/", text: "Центры продаж"}, {url: "/", text: "Партнеры"}],
+        id: 102
       },
       {
         title: "Покупателям",
-        content: [{url: "/", text: "Заказ"}, {url: "/", text: "Доставка"}, {url: "/", text: "Возврат"}]
+        content: [{url: "/", text: "Заказ"}, {url: "/", text: "Доставка"}, {url: "/", text: "Возврат"}],
+        id: 103
       },
       {
         title: "Юридическая информация",
-        content: [{url: "/", text: "Политика конфиденциальности"}, {url: "/", text: "Пользовательское соглашение"}]
+        content: [{url: "/", text: "Политика конфиденциальности"}, {url: "/", text: "Пользовательское соглашение"}],
+        id: 104
       }
     ];
 
@@ -50,7 +54,7 @@ export const Footer = () => {
             <span>Smeg</span>house
           </div>
           <div className="footer__info">
-            {infoSections.map((section) => (<ContentItem section={section} />))}
+            {infoSections.map((section) => (<ContentItem key={section.id} section={section} />))}
           </div>
           <div className="footer__rights">
             &copy; 2020 All rights reserved.

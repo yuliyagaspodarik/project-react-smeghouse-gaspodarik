@@ -7,22 +7,22 @@ import { Favorite } from "../Favorite/Favorite";
 import { Stock } from "../Stock/Stock";
 import { Home } from "../Home/Home";
 
-export const Main = () => (
+export const Main = (props) => (
   <Switch>
     <Route path="/products">
-      <Products/>
+      <Products />
     </Route>
     <Route path="/login">
-      <Login/>
+      <Login />
     </Route>
     <Route path="/favorite">
-      <Favorite/>
+      <Favorite />
     </Route>
     <Route path="/stock">
-      <Stock/>
+      <Stock />
     </Route>
     <Route path="/">
-      <Home/>
+      <Home {...props} />
     </Route>
   </Switch>
 );
