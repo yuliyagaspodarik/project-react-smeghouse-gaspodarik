@@ -8,7 +8,7 @@ import { Stock } from "../Stock/Stock";
 import { Home } from "../Home/Home";
 
 export const Main = (props) => {
-  console.log('main', props);
+  console.log('main', {props});
   return (
   <Switch>
     <Route path="/products">
@@ -24,7 +24,7 @@ export const Main = (props) => {
       <Stock />
     </Route>
     <Route path="/">
-      <Home products={props.store}/>
+      <Home products={props.products}/>
     </Route>
   </Switch>
 )};

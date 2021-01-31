@@ -10,15 +10,18 @@ import {getAllProducts} from "./api/requests";
 
 const store = createStore(reducer);
 
-store.dispatch({
-  type: "SET_STATE",
-  payload: {
-    state: {
-      ...getAllProducts()
-      //...products
+const initStateData = async () => {
+  const products = await getAllProducts();
+
+  store.dispatch({
+    type: "SET_STATE",
+    payload: {
+      data: products
     }
-  }
-});
+  });
+};
+
+initStateData();
 
 ReactDOM.render(
   <React.StrictMode>

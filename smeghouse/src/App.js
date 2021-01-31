@@ -7,7 +7,7 @@ import { Main } from "./Main/Main";
 import { Footer } from "./Footer/Footer";
 
 function App(props) {
-  console.log('app',props);
+  console.log('app',{...props.products});
   return (
     <React.Fragment>
       <Header />
