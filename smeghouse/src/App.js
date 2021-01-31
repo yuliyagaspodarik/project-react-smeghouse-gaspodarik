@@ -7,11 +7,11 @@ import { Main } from "./Main/Main";
 import { Footer } from "./Footer/Footer";
 
 function App(props) {
-  console.log('app',{...props.products});
+  console.log('app', props.products, props.filters);
   return (
     <React.Fragment>
       <Header />
-      <Main products={props.products} />
+      <Main products={props.products} filters={props.filters}/>
       <Footer />
     </React.Fragment>
   );
@@ -19,7 +19,8 @@ function App(props) {
 
 const mapStateToProps = function (state) {
   return {
-    products: state
+    products: state.products,
+    filters: state.filters
   }
 };
 

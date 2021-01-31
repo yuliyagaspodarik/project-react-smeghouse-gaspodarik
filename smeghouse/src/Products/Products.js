@@ -10,6 +10,8 @@ import {
 import {Product} from "../Product/Product.js";
 
 export const Products = (props) => {
+  console.log('products', props);
+
   let match = useRouteMatch();
 
   return (
