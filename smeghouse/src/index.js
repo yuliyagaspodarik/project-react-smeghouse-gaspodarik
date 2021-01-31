@@ -6,18 +6,25 @@ import {Provider} from "react-redux";
 import reducer from "./reducers/reducer";
 import App from "./App";
 import "./index.css";
-import { getAllProducts, getAllFilters } from "./api/requests";
+import {getAllProducts, getAllFilters, getContacts} from "./api/requests";
 
 const store = createStore(reducer);
 
 const initStateData = async () => {
-  const products = await getAllProducts();
+  /*const products = await getAllProducts();
   const filters = await getAllFilters();
+  const contacts = await getContacts();*/
+  const data = {
+    products: await getAllProducts(),
+    filters: await getAllFilters(),
+    contacts: await getContacts()
+  };
 
   store.dispatch({
     type: "SET_STATE",
     payload: {
-      data: {products: products, filters: filters}
+      data: data
+      /*data: {products: products, filters: filters, contacts: contacts}*/
     }
   });
 };

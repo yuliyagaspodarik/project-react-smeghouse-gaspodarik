@@ -27,3 +27,17 @@ export async function getAllFilters() {
 
   return filters;
 }
+
+export async function getContacts() {
+  const contactsResponse = await fetch(`${apiRoot}/contacts/`);
+
+  if (!contactsResponse.ok) {
+    console.log(`Error with status ${contactsResponse.status}`);
+    return;
+  }
+
+  const contacts = await contactsResponse.json();
+  console.log('request filters', contacts);
+
+  return contacts;
+}

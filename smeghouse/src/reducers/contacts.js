@@ -1,7 +1,7 @@
-export const products = (state  = [], action) => {
+export const contacts = (state  = [], action) => {
   switch (action.type) {
     case "SET_STATE":
-      return state.concat(action.payload.data.products);
+      return state.concat(action.payload.data.contacts);
     case "CHECK_FILTER": break;
     case "ADD_TO_FAVORITES": break;
     case "ADD_TO_STOCK": break;
