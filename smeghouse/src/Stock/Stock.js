@@ -1,3 +1,7 @@
 import React from 'react';
 
-export const Stock = (props) => (<h2>Stock</h2>);
+export const Stock = (props) => (
+  <main>
+    <h2>Stock</h2>
+  </main>
+);

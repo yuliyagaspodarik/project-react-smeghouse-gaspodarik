@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.app-container {
+
+}
+
+.app-content {
+  flex: 1;
+  position: relative;
+}

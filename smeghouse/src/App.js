@@ -11,7 +11,7 @@ function App(props) {
   return (
     <React.Fragment>
       <Header />
-      <Main products={props.products} filters={props.filters}/>
+      <Main id="app-content" products={props.products} filters={props.filters}/>
       <Footer contacts={props.contacts}/>
     </React.Fragment>
   );
