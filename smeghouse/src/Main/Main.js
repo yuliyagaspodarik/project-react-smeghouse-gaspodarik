@@ -6,11 +6,15 @@ import { Login } from "../Login/Login";
 import { Favorite } from "../Favorite/Favorite";
 import { Stock } from "../Stock/Stock";
 import { Home } from "../Home/Home";
+import {NotFound} from "../NotFound/NotFound";
 
 export const Main = (props) => {
   console.log('main', props);
   return (
   <Switch>
+    <Route exact path="/">
+      <Home products={props.products} filters={props.filters}/>
+    </Route>
     <Route path="/products">
       <Products products={props.products} filters={props.filters}/>
     </Route>
@@ -23,8 +27,8 @@ export const Main = (props) => {
     <Route path="/stock">
       <Stock />
     </Route>
-    <Route path="/">
-      <Home products={props.products} filters={props.filters}/>
+    <Route>
+      <NotFound/>
     </Route>
   </Switch>
 )};
