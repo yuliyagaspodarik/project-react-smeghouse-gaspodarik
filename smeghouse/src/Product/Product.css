@@ -1,0 +1,169 @@
+.product div {
+    margin: 1.5rem;
+}
+
+.product p {
+    margin: 0.5rem 0;
+}
+
+.cart {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Poiret One', cursive;
+    font-size: 1.2rem;
+}
+
+.cart__image {
+    position: relative;
+    width: 30%;
+}
+
+.cart__image span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    font-family: FontAwesome;
+}
+
+.cart__image span:hover {
+    cursor: pointer;
+}
+
+.cart__image img {
+    width: 100%;
+}
+
+.cart__info {
+    width: 50%;
+}
+
+.cart__title h2,
+.cart__title p {
+    margin: 0;
+}
+
+.cart__price {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.cart__description h4 {
+    text-transform: uppercase;
+}
+
+.cart__arrow-back {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    z-index: 10;
+}
+
+.cart__button {
+    position: relative;
+    padding: 0.5rem 1.5rem;
+    border: 0 solid transparent;
+    border-radius: 10px;
+    background-color: #000;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .0) 30%, rgba(255, 255, 255, .8), rgba(255, 255, 255, .0) 70%), radial-gradient(190% 100% at 50% 0%, rgba(255, 255, 255, .7) 0%, rgba(255, 255, 255, .5) 50%, rgba(0, 0, 0, 0) 50%);
+    background-repeat: no-repeat;
+    background-size: 200% 100%, auto;
+    background-position: 200% 0, 0 0;
+    box-shadow: rgba(0, 0, 0, .3) 0 2px 5px;
+    color: white;
+    text-transform: uppercase;
+    font-family: Calibri, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-shadow: -1px -1px #000;
+    user-select: none;
+    outline: none;
+}
+
+.cart__button:active {
+    top: 1px;
+    box-shadow: none;
+}
+
+.cart__button:hover {
+    transition: .5s linear;
+    background-position: -200% 0, 0 0;
+    cursor: pointer;
+}
+
+@media (max-width: 38rem) {
+    .cart__image {
+        width: 50%;
+        margin: 0;
+    }
+
+    .cart__title h2 {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .cart__title p {
+        font-size: 1rem;
+    }
+
+    .cart__button {
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    .cart__info {
+        margin: 0;
+    }
+
+    .cart__description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 30rem) {
+    .cart {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5rem 0;
+    }
+
+    .cart__image img {
+        width: 10rem;
+    }
+
+    .cart__info {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cart__price {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    .cart__description {
+        margin: 0;
+    }
+
+    .cart__description h4 {
+        font-size: 1rem;
+    }
+
+    .cart__description p {
+        margin: 0;
+        font-size: 0.9rem;
+        text-align: left;
+    }
+
+    .cart__button {
+        padding: 0.5rem;
+        font-size: 0.7rem;
+    }
+}
