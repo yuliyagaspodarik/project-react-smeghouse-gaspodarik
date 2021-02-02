@@ -1,25 +1,24 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   useRouteMatch
 } from "react-router-dom";
 
 import "./Products.css";
-import {Product} from "../Product/Product.js";
-import {ProductsList} from "../ProductsList/ProductsList";
+import { Product } from "../Product/Product.js";
+import { ProductsList } from "../ProductsList/ProductsList";
 
-export const Products = (props) => {
+export const Products = ({ products, filters }) => {
   let match = useRouteMatch();
+
   return (
     <Switch>
       <Route exact path={match.path}>
-        <ProductsList products={props.products} filters={props.filters}/>
+        <ProductsList products={products} filters={filters}/>
       </Route>
       <Route path={`${match.path}/:productId`}>
-        <Product/>
+        <Product products={products}/>
       </Route>
     </Switch>
   )

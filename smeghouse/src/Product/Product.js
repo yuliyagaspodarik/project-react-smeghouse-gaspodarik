@@ -1,12 +1,15 @@
-import React from "react";
-import {useParams, Link} from "react-router-dom";
+import React from 'react';
+import { useParams, Link } from "react-router-dom";
 
-export const Product = () => {
-  let {productId} = useParams();
+export const Product = ({ products }) => {
+  const { productId } = useParams();
+  const product = products.find((product) => product.id == productId);
+
   return (
-    <React.Fragment>
+    <main>
       <h3>Product ID: {productId}</h3>
+      <p>{product.name}</p>
       <Link to="/products">Back to list</Link>
-    </React.Fragment>
+    </main>
   )
 };
