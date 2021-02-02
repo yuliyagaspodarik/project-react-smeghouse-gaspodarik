@@ -16,7 +16,7 @@ section {
 }
 
 .cart-preview div {
-    padding: 0;
+    padding: 0 0.5rem 0.5rem;
 }
 
 .cart-preview__image {
@@ -27,7 +27,7 @@ section {
 }
 
 .cart-preview__image img {
-    width: 100%;
+    width: 90%;
     transition: transform .4s ease-out;
 }
 
