@@ -52,6 +52,17 @@ input {
 }
 
 @media (max-width: 54rem) {
+    .catalog {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .catalog__categories,
+    .catalog__products {
+        width: 80%;
+    }
+
     .catalog__categories {
         padding: 0 0.5rem;
         font-size: 0.8rem;
@@ -59,23 +70,7 @@ input {
 
     .catalog__item {
         width: 150px;
-    }
-}
-
-@media (max-width: 24rem) {
-    .catalog {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .catalog__item {
-        width: 150px;
-    }
-
-    .catalog__categories,
-    .catalog__products {
-        width: 80%;
+        height: 350px;
     }
 }
 

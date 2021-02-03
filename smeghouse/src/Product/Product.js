@@ -2,6 +2,7 @@ import React from 'react';
 import {useParams, Link} from "react-router-dom";
 import {QuantityCounter} from "./QuantityCounter/QuantityCounter";
 import "./Product.css";
+import {StockButton} from "../StockButton/StockButton";
 
 export const Product = ({ products }) => {
   const {productId} = useParams();
@@ -28,7 +29,7 @@ export const Product = ({ products }) => {
               <QuantityCounter/>
             </div>
             <div>
-              <button className="cart__button">В корзину</button>
+              <StockButton className={"cart__button"} />
             </div>
             <div className="cart__description">
               <h4>Описание</h4>

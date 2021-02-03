@@ -1,7 +1,8 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 
 import "./ProductPreview.css";
+import {StockButton} from "../StockButton/StockButton";
 
 export const ProductPreview = ({ product }) => {
   return (
@@ -19,7 +20,7 @@ export const ProductPreview = ({ product }) => {
       <Link to={`/products/${product.id}`} className="cart-preview__link" title="Перейти на страницу товара">
         подробнее
       </Link>
-      <button className="cart-preview__button">В корзину</button>
+      <StockButton className={"cart-preview__button"} />
     </div>
   </div>
   </section>
