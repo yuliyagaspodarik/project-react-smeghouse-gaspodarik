@@ -11,6 +11,7 @@ export const Search = (props) => {
     props.dispatch(searchProducts(event.target.value));
     history.push("/products");
 }
+
   return (
     <label className="header__search">
       <span />

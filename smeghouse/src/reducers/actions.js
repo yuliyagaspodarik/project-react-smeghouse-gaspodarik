@@ -1,13 +1,20 @@
 export const initState = (data) => ({
   type: "INIT_STATE",
   payload: {
-    data: data
+    data
   }
 });
 
-export const searchProducts = (value) => ({
+export const searchProducts = (searchedProducts) => ({
   type: "SEARCH_PRODUCTS",
   payload: {
-    data: value
+    searchedProducts
+  }
+});
+
+export const checkFilter = (filter) => ({
+  type: "CHECK_FILTER",
+  payload: {
+    filter
   }
 });

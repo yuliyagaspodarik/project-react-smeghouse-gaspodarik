@@ -15,7 +15,7 @@ export const Main = (props) => {
       <Home filters={props.filters}/>
     </Route>
     <Route path="/products">
-      <Products products={props.products} filters={props.filters} searchedProducts={props.searchedProducts}/>
+      <Products {...props}/*products={props.products} filters={props.filters} searchedProducts={props.searchedProducts}*//>
     </Route>
     <Route path="/login">
       <Login />

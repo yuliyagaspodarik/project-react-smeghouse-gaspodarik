@@ -14,10 +14,15 @@ export const reducer = (state  = initialState, action) => {
         products: state.products,
         filters: state.filters,
         contacts: state.contacts,
-        searchedProducts: state.products.filter(product => (JSON.stringify(product.name) + JSON.stringify(product.article) + JSON.stringify(product.category)).toLowerCase().indexOf(action.payload.data.toLowerCase()) !== -1)
+        searchedProducts: state.products.filter(product => (JSON.stringify(product.name) + JSON.stringify(product.article) + JSON.stringify(product.category)).toLowerCase().indexOf(action.payload.searchedProducts.toLowerCase()) !== -1)
       };
     case "CHECK_FILTER":
-      break;
+      return {
+        products: state.products,
+        filters: state.filters,
+        contacts: state.contacts,
+        searchedProducts: state.products.filter(product => product.category === action.payload.filter.name && action.payload.filter.checked)
+      };
     case "ADD_TO_FAVORITES": break;
     case "ADD_TO_STOCK": break;
     case "LOG_IN": break;
