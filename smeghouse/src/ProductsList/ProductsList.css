@@ -1,0 +1,13 @@
+.catalog {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+@media (max-width: 54rem) {
+    .catalog {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

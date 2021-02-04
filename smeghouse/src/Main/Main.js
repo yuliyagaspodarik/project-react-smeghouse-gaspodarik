@@ -9,14 +9,13 @@ import { Home } from "../Home/Home";
 import {NotFound} from "../NotFound/NotFound";
 
 export const Main = (props) => {
-  console.log('main', props);
   return (
   <Switch>
     <Route exact path="/">
-      <Home products={props.products} filters={props.filters}/>
+      <Home filters={props.filters}/>
     </Route>
     <Route path="/products">
-      <Products products={props.products} filters={props.filters}/>
+      <Products products={props.products} filters={props.filters} searchedProducts={props.searchedProducts}/>
     </Route>
     <Route path="/login">
       <Login />

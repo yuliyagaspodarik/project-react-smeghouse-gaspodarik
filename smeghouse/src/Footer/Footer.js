@@ -9,7 +9,7 @@ export const Footer = ({ contacts }) => (
         <span>Smeg</span>house
       </div>
       <div className="footer__info">
-        {contacts.map((section) => (<ContentItem key={section.id} section={section}/>))}
+        {contacts.map((section) => (<ContentItem key={section.id} section={section} />))}
       </div>
       <div className="footer__rights">
         &copy; 2020 All rights reserved.

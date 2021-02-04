@@ -12,7 +12,14 @@ export const Product = ({ products }) => {
     <main className="product">
       <article>
         <div className="cart">
-          <Link to="/products" className="cart__arrow-back" title="Вернуться к списку">&larr;<span>Back to list</span></Link>
+          <Link
+            to="/products"
+            className="cart__arrow-back"
+            title="Вернуться к списку"
+            rel="noopener noreferrer"
+          >
+            &larr;<span>Back to list</span>
+          </Link>
           <div className="cart__image">
             <img src={product.url} alt="Изображение товара"/>
             <span className={!product.select ? 'fa-heart-o' : ' fa-heart'}/>

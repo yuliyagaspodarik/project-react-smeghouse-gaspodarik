@@ -9,7 +9,6 @@ export async function getData(request) {
   }
 
   const data = await dataResponse.json();
-  console.log('request', data);
 
   return data;
 }

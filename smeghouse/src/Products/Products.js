@@ -9,16 +9,16 @@ import "./Products.css";
 import { Product } from "../Product/Product.js";
 import { ProductsList } from "../ProductsList/ProductsList";
 
-export const Products = ({ products, filters }) => {
+export const Products = ({ products, filters, searchedProducts }) => {
   let match = useRouteMatch();
 
   return (
     <Switch>
       <Route exact path={match.path}>
-        <ProductsList products={products} filters={filters}/>
+        <ProductsList products={products} filters={filters} searchedProducts={searchedProducts} />
       </Route>
       <Route path={`${match.path}/:productId`}>
-        <Product products={products}/>
+        <Product products={products} />
       </Route>
     </Switch>
   )
