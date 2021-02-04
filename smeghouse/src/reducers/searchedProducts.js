@@ -1,4 +1,4 @@
-export const searchedProducts = (state  = [], action) => {
+/*export const searchedProducts = (state  = [], action) => {
   switch (action.type) {
     case "SET_STATE":
       return state.concat(action.payload.data.products);
@@ -13,4 +13,4 @@ export const searchedProducts = (state  = [], action) => {
     default:
       return state;
   }
-};
+};*/

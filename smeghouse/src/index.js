@@ -14,7 +14,6 @@ const store = createStore(reducer);
 const initStateData = async () => {
   const data = {
     products: await getData("products"),
-    searchedProducts: await getData("products"),
     filters: await getData("filters"),
     contacts: await getData("contacts")
   };

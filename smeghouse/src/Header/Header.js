@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 
 import "./Header.css";
+import { Search } from "../Search/Search";
 
 export const Header = (props) => {
   return (
@@ -13,15 +14,7 @@ export const Header = (props) => {
           <ul className="header__menu">
             <li><Link to="/" rel="noopener noreferrer">Главная</Link></li>
             <li><Link to="/products" rel="noopener noreferrer">Каталог</Link></li>
-            <li>
-              <label className="header__search">
-                <span/>
-                <input
-                  placeholder="Search"
-                  onChange={(event) => {  console.log('searh in header', event.target.value);
-                    props.dispatch({type: "SEARCH_PRODUCTS", payload: {data: event.target.value}})}}/>
-              </label>
-            </li>
+            <li><Search {...props} /></li>
           </ul>
           <ul className="header__buttons">
             <li><Link to="/login" className="fa fa-user" rel="noopener noreferrer"/></li>

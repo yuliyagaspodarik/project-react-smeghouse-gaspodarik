@@ -1,4 +1,4 @@
-export const products = (state  = [], action) => {
+/*export const products = (state  = [], action) => {
   switch (action.type) {
     case "SET_STATE":
       return state.concat(action.payload.data.products);
@@ -10,4 +10,4 @@ export const products = (state  = [], action) => {
     default:
       return state;
   }
-};
+};*/

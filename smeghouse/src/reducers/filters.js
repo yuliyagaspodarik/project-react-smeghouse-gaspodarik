@@ -1,4 +1,4 @@
-export const filters = (state  = [], action) => {
+/*export const filters = (state  = [], action) => {
   switch (action.type) {
     case "SET_STATE":
       return  state.concat(action.payload.data.filters);
@@ -10,4 +10,4 @@ export const filters = (state  = [], action) => {
     default:
       return state;
   }
-};
+};*/

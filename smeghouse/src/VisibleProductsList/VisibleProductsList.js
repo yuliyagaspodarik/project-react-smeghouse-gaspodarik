@@ -1,7 +1,7 @@
 import React from "react";
 
 import { ProductPreview } from "../ProductPreview/ProductPreview";
-import "./VisibleProductsList.css"
+import "./VisibleProductsList.css";
 
 export const VisibleProductsList = ({ products }) => {
   return (
