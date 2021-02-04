@@ -5,9 +5,10 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 
 import reducer from "./reducers/reducer";
+import { initState } from "./reducers/actions";
+import { getData } from "./api/requests";
 import App from "./App";
 import "./index.css";
-import { getData } from "./api/requests";
 
 const store = createStore(reducer);
 
@@ -18,12 +19,7 @@ const initStateData = async () => {
     contacts: await getData("contacts")
   };
 
-  store.dispatch({
-    type: "SET_STATE",
-    payload: {
-      data: data
-    }
-  });
+  store.dispatch(initState(data));
 };
 
 initStateData();

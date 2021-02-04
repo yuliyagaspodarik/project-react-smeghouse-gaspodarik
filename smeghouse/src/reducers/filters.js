@@ -1,6 +1,6 @@
 /*export const filters = (state  = [], action) => {
   switch (action.type) {
-    case "SET_STATE":
+    case "INIT_STATE":
       return  state.concat(action.payload.data.filters);
     case "CHECK_FILTER": break;
     case "ADD_TO_FAVORITES": break;

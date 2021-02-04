@@ -1,15 +1,22 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
+import { searchProducts } from "../reducers/actions";
 import "./Search.css";
 
 export const Search = (props) => {
+  const history = useHistory();
+
+  function handleChange(event) {
+    props.dispatch(searchProducts(event.target.value));
+    history.push("/products");
+}
   return (
     <label className="header__search">
-      <span/>
+      <span />
       <input
         placeholder="Search"
-        onChange={(event) => {  console.log('searh in header', event.target.value);
-          props.dispatch({type: "SEARCH_PRODUCTS", payload: {data: event.target.value}})}}/>
+        onChange={handleChange}/>
     </label>
   )
 };
