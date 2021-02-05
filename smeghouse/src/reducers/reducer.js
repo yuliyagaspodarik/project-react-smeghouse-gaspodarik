@@ -14,30 +14,33 @@ export const reducer = (state  = initialState, action) => {
         products: action.payload.data.products.sort(abc),
         filters: action.payload.data.filters.sort(abc),
         contacts: action.payload.data.contacts,
-        searchedProducts: state.searchedProducts};
+        searchedProducts: action.payload.data.products.sort(abc)};
     case "SEARCH_PRODUCTS":
-      return {
-        products: state.products,
-        filters: state.filters,
-        contacts: state.contacts,
-        searchedProducts: state.products.filter(product => (JSON.stringify(product.name) + JSON.stringify(product.article) + JSON.stringify(product.category)).toLowerCase().indexOf(action.payload.searchedProducts.toLowerCase()) !== -1).sort(abc)
-      };
-    case "CHECK_FILTER":
-      return {
-        products: state.products,
-        filters: state.filters,
-        contacts: state.contacts,
-        searchedProducts: state.products.filter(product => product.category === action.payload.filter.name && action.payload.filter.checked).sort(abc)
-      };
-    case "TOGGLE_FILTER":
-      const filters = state.filters.map(filter => filter.name === action.payload.filter.name ? {name: filter.name, checked:!filter.checked} : filter);
-      const searchedProducts = state.products.filter(product => JSON.stringify(filters.filter(filter => filter.checked)).indexOf(product.category) !== -1);
+      const searchedProductsInSearch = state.products.filter(product => (JSON.stringify(product.name) + JSON.stringify(product.article) + JSON.stringify(product.category)).toLowerCase().indexOf(action.payload.searchedProducts.toLowerCase()) !== -1).sort(abc);
+      const filtersInSearch = state.filters.map(filter => searchedProductsInSearch.map(product => product.category).includes(filter.name) ? {name: filter.name, checked: true} : {name: filter.name, checked: false});
 
       return {
         products: state.products,
-        filters,
+        filters: filtersInSearch,
         contacts: state.contacts,
-        searchedProducts
+        searchedProducts: searchedProductsInSearch
+      };
+    case "TOGGLE_FILTER":
+      const filtersToggleFilters = state.filters.map(filter => filter.name === action.payload.filter.name ? {name: filter.name, checked:!filter.checked} : filter);
+      const searchedProductsToggleFilters = state.products.filter(product => JSON.stringify(filtersToggleFilters.filter(filter => filter.checked)).indexOf(product.category) !== -1);
+
+      return {
+        products: state.products,
+        filters: filtersToggleFilters,
+        contacts: state.contacts,
+        searchedProducts: searchedProductsToggleFilters
+      };
+    case "TOGGLE_ALL":
+      return {
+        products: state.products,
+        filters: state.filters.map(filter => action.payload.filter.checked ? {name: filter.name, checked: true} : {name: filter.name, checked: false}),
+        contacts: state.contacts,
+        searchedProducts: action.payload.filter.checked ? state.products : []
       };
     case "ADD_TO_FAVORITES": break;
     case "ADD_TO_STOCK": break;

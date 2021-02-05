@@ -33,6 +33,11 @@
 
 .cart__image img {
     width: 100%;
+    transition: transform .4s ease-out;
+}
+
+.cart__image:hover img {
+    transform: scale(1.05);
 }
 
 .cart__info {

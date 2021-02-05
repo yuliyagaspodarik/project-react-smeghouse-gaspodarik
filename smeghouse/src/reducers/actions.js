@@ -12,16 +12,16 @@ export const searchProducts = (searchedProducts) => ({
   }
 });
 
-export const checkFilter = (filter) => ({
-  type: "CHECK_FILTER",
+export const toggleFilter = (filter) => ({
+  type: "TOGGLE_FILTER",
   payload: {
     filter
   }
 });
 
-export const toggleFilter = (filter) => ({
-    type: "TOGGLE_FILTER",
-    payload: {
-      filter
-    }
+export const toggleAll = (filter) => ({
+  type: "TOGGLE_ALL",
+  payload: {
+    filter
+  }
 });

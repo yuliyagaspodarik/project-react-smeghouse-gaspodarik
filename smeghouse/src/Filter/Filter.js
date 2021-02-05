@@ -1,6 +1,6 @@
 import React from "react";
 
-import {checkFilter, toggleFilter} from "../reducers/actions";
+import {toggleAll, toggleFilter} from "../reducers/actions";
 import "./Filter.css";
 
 export const Filter = (props) => {
@@ -8,10 +8,21 @@ export const Filter = (props) => {
     props.dispatch(toggleFilter(event.target));
   }
 
-  console.log('filter', props.filters);
+  function handleChangeAll(event) {
+    props.dispatch(toggleAll(event.target));
+  }
+
   return (
     <div className="catalog__categories">
       <h3>Категории</h3>
+      <label>
+        <input
+          type="checkbox"
+          name="Все"
+          onChange={handleChangeAll}
+        />
+        Все
+      </label>
       <ul>
         {props.filters.map((filter) => (
           <li key={filter.name}>

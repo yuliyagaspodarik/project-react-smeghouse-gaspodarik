@@ -63,6 +63,10 @@ section {
     letter-spacing: 2px;
 }
 
+.cart-preview__link:hover {
+    border-bottom: 1px dotted black;
+}
+
 @media (max-width: 54rem) {
     .cart-preview__description h4 {
         font-size: 0.8rem;
