@@ -5,6 +5,7 @@ import { Filter } from "../Filter/Filter";
 import { VisibleProductsList } from "../VisibleProductsList/VisibleProductsList";
 
 export const ProductsList = (props) => {
+  console.log('products', props.searchedProducts);
   return (
     <div className="catalog">
       <Filter {...props} />

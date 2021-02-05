@@ -1,11 +1,11 @@
 import React from "react";
 
-import { checkFilter } from "../reducers/actions";
+import {checkFilter, toggleFilter} from "../reducers/actions";
 import "./Filter.css";
 
 export const Filter = (props) => {
-  function handleClick(event) {
-    props.dispatch(checkFilter(event.target));
+  function handleChange(event) {
+    props.dispatch(toggleFilter(event.target));
   }
 
   console.log('filter', props.filters);
@@ -19,7 +19,8 @@ export const Filter = (props) => {
               <input
                 type="checkbox"
                 name={filter.name}
-                onClick={handleClick}
+                checked={filter.checked}
+                onChange={handleChange}
               />
               {filter.name}
             </label>
