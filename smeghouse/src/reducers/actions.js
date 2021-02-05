@@ -19,9 +19,9 @@ export const toggleFilter = (filter) => ({
   }
 });
 
-export const toggleAll = (filter) => ({
+export const toggleAll = (checked) => ({
   type: "TOGGLE_ALL",
   payload: {
-    filter
+    checked
   }
 });

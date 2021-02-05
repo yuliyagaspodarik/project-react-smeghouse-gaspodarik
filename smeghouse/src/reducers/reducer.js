@@ -38,9 +38,9 @@ export const reducer = (state  = initialState, action) => {
     case "TOGGLE_ALL":
       return {
         products: state.products,
-        filters: state.filters.map(filter => action.payload.filter.checked ? {name: filter.name, checked: true} : {name: filter.name, checked: false}),
+        filters: state.filters.map(filter => action.payload.checked ? {name: filter.name, checked: true} : {name: filter.name, checked: false}),
         contacts: state.contacts,
-        searchedProducts: action.payload.filter.checked ? state.products : []
+        searchedProducts: action.payload.checked ? state.products : []
       };
     case "ADD_TO_FAVORITES": break;
     case "ADD_TO_STOCK": break;
