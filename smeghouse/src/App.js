@@ -10,7 +10,7 @@ function App(props) {
   return (
     <React.Fragment>
       <Header {...props} />
-      <Main id="app-content" {...props}/*products={props.products} filters={props.filters} searchedProducts={props.searchedProducts}*/ />
+      <Main className="app-content" {...props}/*products={props.products} filters={props.filters} searchedProducts={props.searchedProducts}*/ />
       <Footer contacts={props.contacts} />
     </React.Fragment>
   );

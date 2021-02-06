@@ -1,4 +1,4 @@
-export const contacts = (state  = [], action) => {
+/*export const contacts = (state  = [], action) => {
   switch (action.type) {
     case "SET_STATE":
       return state.concat(action.payload.data.contacts);
@@ -10,4 +10,4 @@ export const contacts = (state  = [], action) => {
     default:
       return state;
   }
-};
+};*/

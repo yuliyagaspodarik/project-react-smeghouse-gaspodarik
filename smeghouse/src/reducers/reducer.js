@@ -12,7 +12,7 @@ export const reducer = (state  = initialState, action) => {
     case "INIT_STATE":
       return {
         products: action.payload.data.products.sort(abc),
-        filters: action.payload.data.filters.sort(abc),
+        filters: action.payload.data.filters,
         contacts: action.payload.data.contacts,
         searchedProducts: action.payload.data.products.sort(abc)};
     case "SEARCH_PRODUCTS":
@@ -41,6 +41,13 @@ export const reducer = (state  = initialState, action) => {
         filters: state.filters.map(filter => action.payload.checked ? {name: filter.name, checked: true} : {name: filter.name, checked: false}),
         contacts: state.contacts,
         searchedProducts: action.payload.checked ? state.products : []
+      };
+    case "CHECK_CATEGORY":
+      return {
+        products: state.products,
+        filters: state.filters.map(filter => filter.name === action.payload.filterName ? {name: filter.name, checked: true} : {name: filter.name, checked: false}),
+        contacts: state.contacts,
+        searchedProducts: state.products.filter(product => product.category === action.payload.filterName)
       };
     case "ADD_TO_FAVORITES": break;
     case "ADD_TO_STOCK": break;

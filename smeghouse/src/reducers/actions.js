@@ -25,3 +25,10 @@ export const toggleAll = (checked) => ({
     checked
   }
 });
+
+export const checkCategory = (filterName) => ({
+  type: "CHECK_CATEGORY",
+  payload: {
+    filterName
+  }
+});

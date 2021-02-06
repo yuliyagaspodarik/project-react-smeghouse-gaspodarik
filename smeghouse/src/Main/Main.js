@@ -6,16 +6,16 @@ import { Login } from "../Login/Login";
 import { Favorite } from "../Favorite/Favorite";
 import { Stock } from "../Stock/Stock";
 import { Home } from "../Home/Home";
-import {NotFound} from "../NotFound/NotFound";
+import { NotFound } from "../NotFound/NotFound";
 
 export const Main = (props) => {
   return (
   <Switch>
     <Route exact path="/">
-      <Home filters={props.filters}/>
+      <Home {...props}/>
     </Route>
     <Route path="/products">
-      <Products {...props}/*products={props.products} filters={props.filters} searchedProducts={props.searchedProducts}*//>
+      <Products {...props}/>
     </Route>
     <Route path="/login">
       <Login />

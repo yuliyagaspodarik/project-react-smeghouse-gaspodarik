@@ -1,7 +1,9 @@
 import React from "react";
 
-import {toggleAll, toggleFilter} from "../reducers/actions";
+import { toggleAll, toggleFilter } from "../reducers/actions";
+import { abc } from "../api/helpers";
 import "./Filter.css";
+
 
 export class Filter extends React.Component {
   constructor(props) {
@@ -12,7 +14,7 @@ export class Filter extends React.Component {
   }
 
   componentDidMount() {
-    this.input.current.checked = true;
+    //this.input.current.checked = true;
   }
 
   handleChange(event) {
@@ -37,7 +39,7 @@ export class Filter extends React.Component {
           Все
         </label>
         <ul>
-          {this.props.filters.map((filter) => (
+          {this.props.filters.sort(abc).map((filter) => (
             <li key={filter.name}>
               <label className="catalog__categories-item">
                 <input

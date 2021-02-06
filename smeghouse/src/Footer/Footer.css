@@ -57,7 +57,15 @@
     margin-right: 0.5rem;
 }
 
-@media (max-width: 43rem) {
+@media (max-width: 45rem) {
+    .footer__title {
+        padding: 0;
+    }
+
+    .footer__info h5 {
+        margin: 0.5rem;
+    }
+
     .footer__info li {
         font-size: 0.8rem;
     }
@@ -79,5 +87,11 @@
 
     .footer__info img {
         width: 1rem;
+    }
+}
+
+@media (max-width: 14rem) {
+    .footer__title {
+        display: none;
     }
 }
