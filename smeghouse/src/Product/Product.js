@@ -32,9 +32,7 @@ export const Product = ({ products }) => {
             <div className="cart__price">
               <span>{product.price} Br</span>
             </div>
-            <div>
-              <QuantityCounter/>
-            </div>
+            <QuantityCounter/>
             <div>
               <StockButton className={"cart__button"} />
             </div>

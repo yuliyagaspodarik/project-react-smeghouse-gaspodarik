@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 
-export const QuantityCounter = () => {
+import "./QuantityCounter.css";
+
+export function QuantityCounter() {
+  const [count, setCount] = useState(1);
   return (
-    <p>counter</p>
+    <div className="quantity-counter">
+      <button
+        className="quantity-counter__button"
+        disabled={count === 0}
+        aria-label="Decrement value"
+        onClick={() => setCount(count - 1)}
+      >
+        -
+      </button>
+      <div id="quantity-counter__content">
+        {count}
+      </div>
+      <button
+        className="quantity-counter__button"
+        aria-label="Increment value"
+        onClick={() => setCount(count + 1)}
+      >
+        +
+      </button>
+    </div>
   )
-};
+}
