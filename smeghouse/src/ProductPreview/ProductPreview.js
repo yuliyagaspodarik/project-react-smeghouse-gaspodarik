@@ -1,9 +1,9 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./ProductPreview.css";
 import { StockButton } from "../StockButton/StockButton";
-import {FavoriteButton} from "../FavoriteButton/FavoriteButton";
+import { FavoriteButton } from "../FavoriteButton/FavoriteButton";
 
 export const ProductPreview = (props) => {
   return (
@@ -11,7 +11,7 @@ export const ProductPreview = (props) => {
       <div className="cart-preview">
         <div className="cart-preview__image">
           <img src={props.product.url} alt="Изображение товара" />
-          <FavoriteButton product={props.product} dispatch={props.dispatch}/>
+          <FavoriteButton select={props.product.select} article={props.product.article} dispatch={props.dispatch} />
         </div>
         <div className="cart-preview__description">
           <p>{props.product.price} Br</p>
@@ -26,7 +26,7 @@ export const ProductPreview = (props) => {
           >
             подробнее
           </Link>
-          <StockButton className={"cart-preview__button"} />
+          <StockButton className="cart-preview__button" article={props.product.article} dispatch={props.dispatch} />
         </div>
       </div>
     </section>

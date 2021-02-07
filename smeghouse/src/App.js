@@ -22,7 +22,8 @@ const mapStateToProps = function (state) {
     filters: state.filters,
     contacts: state.contacts,
     searchedProducts: state.searchedProducts,
-    favorites: state.favorites
+    favorites: state.favorites,
+    stock: state.stock
   }
 };
 

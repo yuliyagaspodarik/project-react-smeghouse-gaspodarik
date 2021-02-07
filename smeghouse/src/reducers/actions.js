@@ -39,3 +39,10 @@ export const addToFavorite = (article) => ({
     article
   }
 });
+
+export const addToStock = (article) => ({
+  type: "ADD_TO_STOCK",
+  payload: {
+    article
+  }
+});

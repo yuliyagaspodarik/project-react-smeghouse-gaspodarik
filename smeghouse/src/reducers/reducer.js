@@ -73,7 +73,17 @@ export const reducer = (state  = initialState, action) => {
         favorites: state.products.filter(product => product.select),
         stock: state.stock
       };
-    case "ADD_TO_STOCK": break;
+    case "ADD_TO_STOCK":
+      state.products.filter(product => product.article === action.payload.article).map(product => product.inStock = !product.inStock);
+
+      return {
+        products: state.products,
+        filters: state.filters,
+        contacts: state.contacts,
+        searchedProducts: state.searchedProducts,
+        favorites: state.favorites,
+        stock: state.products.filter(product => product.inStock)
+      };
     case "LOG_IN": break;
     case "LOG_OUT": break;
     default:

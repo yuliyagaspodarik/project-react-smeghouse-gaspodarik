@@ -24,7 +24,7 @@ export const Product = (props) => {
           </Link>
           <div className="cart__image">
             <img src={product.url} alt="Изображение товара"/>
-            <FavoriteButton product={product} dispatch={props.dispatch}/>
+            <FavoriteButton select={product.select} article={product.article} dispatch={props.dispatch}/>
           </div>
           <div className="cart__info">
             <div className="cart__title">
@@ -36,7 +36,7 @@ export const Product = (props) => {
             </div>
             <QuantityCounter/>
             <div>
-              <StockButton className="cart__button" />
+              <StockButton className="cart__button" article={product.article} dispatch={props.dispatch} />
             </div>
             <div className="cart__description">
               <h4>Описание</h4>

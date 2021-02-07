@@ -12,19 +12,19 @@ export const Main = (props) => {
   return (
   <Switch>
     <Route exact path="/">
-      <Home {...props}/>
+      <Home {...props} />
     </Route>
     <Route path="/products">
-      <Products {...props}/>
+      <Products {...props} />
     </Route>
     <Route path="/login">
       <Login />
     </Route>
     <Route path="/favorite">
-      <Favorite {...props}/>
+      <Favorite {...props} />
     </Route>
     <Route path="/stock">
-      <Stock />
+      <Stock {...props} />
     </Route>
     <Route>
       <NotFound/>
