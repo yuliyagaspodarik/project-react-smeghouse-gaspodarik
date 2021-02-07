@@ -30,7 +30,7 @@ export class Filter extends React.Component {
     return (
       <div className="catalog__categories">
         <h3>Категории</h3>
-        <label>
+        <label className="catalog__categories-item">
           <input
             type="checkbox"
             ref={this.input}

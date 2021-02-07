@@ -6,9 +6,9 @@ import {addToStock} from "../reducers/actions";
 export const StockButton = (props) => (
   <button
     type="button"
-    className={`button ${props.className}`}
+    className={`${props.className} ${!props.inStock ? "button" : "button-changed"}`}
     onClick={() => props.dispatch(addToStock(props.article))}
   >
-    В корзину
+    {!props.inStock ? "В корзину" : "выложить"}
   </button>
 );

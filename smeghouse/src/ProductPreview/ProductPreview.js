@@ -26,7 +26,7 @@ export const ProductPreview = (props) => {
           >
             подробнее
           </Link>
-          <StockButton className="cart-preview__button" article={props.product.article} dispatch={props.dispatch} />
+          <StockButton className="cart-preview__button" article={props.product.article} inStock={props.product.inStock} dispatch={props.dispatch} />
         </div>
       </div>
     </section>

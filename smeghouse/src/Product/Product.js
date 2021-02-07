@@ -36,7 +36,7 @@ export const Product = (props) => {
             </div>
             <QuantityCounter/>
             <div>
-              <StockButton className="cart__button" article={product.article} dispatch={props.dispatch} />
+              <StockButton className="cart__button" article={product.article} inStock={product.inStock} dispatch={props.dispatch} />
             </div>
             <div className="cart__description">
               <h4>Описание</h4>
@@ -50,7 +50,7 @@ export const Product = (props) => {
               {product.description.filters ? <p>Фильтры: {product.description.filters}</p> : null}
               {product.description.rotate ? <p>Вращение: {product.description.rotate}&deg;</p> : null}
               <p>Мощность: {product.description.power} кВт</p>
-              <p>Подсветка: {product.description.light ? ' да' : ' нет'}</p>
+              <p>Подсветка: {product.description.light ? " да" : " нет"}</p>
               <p>Дополнительно: {product.description.additionally}</p>
               <p>Производитель: {product.description.producer}</p>
             </div>
