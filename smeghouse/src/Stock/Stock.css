@@ -1,5 +1,10 @@
-.stock__title {
-    margin: 1rem;
-    color: gray;
-    font-family: 'Caveat', cursive;
+.stock-products {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poiret One', cursive;
+}
+
+.stock-message {
+    font-family: 'Poiret One', cursive;
+    font-size: 1.5rem;
 }

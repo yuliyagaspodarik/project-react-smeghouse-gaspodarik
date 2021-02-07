@@ -1,10 +1,9 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 
-import "./Product.css";
-import { QuantityCounter } from "./QuantityCounter/QuantityCounter";
 import { StockButton } from "../StockButton/StockButton";
 import { FavoriteButton } from "../FavoriteButton/FavoriteButton";
+import "./Product.css";
 
 export const Product = (props) => {
   const {productId} = useParams();
@@ -34,7 +33,6 @@ export const Product = (props) => {
             <div className="cart__price">
               <span>{product.price} Br</span>
             </div>
-            <QuantityCounter/>
             <div>
               <StockButton className="cart__button" article={product.article} inStock={product.inStock} dispatch={props.dispatch} />
             </div>

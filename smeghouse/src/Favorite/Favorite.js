@@ -3,11 +3,10 @@ import React from "react";
 import { VisibleProductsList } from "../VisibleProductsList/VisibleProductsList";
 import "./Favorite.css";
 
-export const Favorite = (props) => {
-  return (
-    <main>
-      <h2 className="favorite__title">Избранное</h2>
-      <VisibleProductsList {...props} products={props.favorites} />
-    </main>
-  )
-};
+export const Favorite = (props) => (
+  <main>
+    {props.favorites.length === 0 ? <p className="favorite-message">Список избранных товаров пуст</p> :
+      <VisibleProductsList {...props} products={props.favorites}/>
+    }
+  </main>
+);
