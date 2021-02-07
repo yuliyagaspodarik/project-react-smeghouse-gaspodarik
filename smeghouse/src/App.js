@@ -10,7 +10,7 @@ function App(props) {
   return (
     <React.Fragment>
       <Header {...props} />
-      <Main className="app-content" {...props}/*products={props.products} filters={props.filters} searchedProducts={props.searchedProducts}*/ />
+      <Main {...props}/*products={props.products} filters={props.filters} searchedProducts={props.searchedProducts}*/ />
       <Footer contacts={props.contacts} />
     </React.Fragment>
   );
@@ -21,7 +21,8 @@ const mapStateToProps = function (state) {
     products: state.products,
     filters: state.filters,
     contacts: state.contacts,
-    searchedProducts: state.searchedProducts
+    searchedProducts: state.searchedProducts,
+    favorites: state.favorites
   }
 };
 

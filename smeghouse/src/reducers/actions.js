@@ -32,3 +32,10 @@ export const checkCategory = (filterName) => ({
     filterName
   }
 });
+
+export const addToFavorite = (article) => ({
+  type: "ADD_TO_FAVORITE",
+  payload: {
+    article
+  }
+});

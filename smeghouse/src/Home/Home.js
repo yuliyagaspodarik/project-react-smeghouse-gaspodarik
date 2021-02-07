@@ -5,10 +5,6 @@ import {checkCategory} from "../reducers/actions";
 import "./Home.css";
 
 export const Home = (props) => {
-  function handleClick(filter) {
-    props.dispatch(checkCategory(filter));
-  }
-
   return (
     <main>
       <div className="dashboard">

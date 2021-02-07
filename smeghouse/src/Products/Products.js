@@ -18,7 +18,7 @@ export const Products = (props) => {
         <ProductsList {...props} />
       </Route>
       <Route path={`${match.path}/:productId`}>
-        <Product products={props.products} />
+        <Product products={props.products} dispatch={props.dispatch}/>
       </Route>
     </Switch>
   )

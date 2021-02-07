@@ -9,7 +9,7 @@ export const ProductsList = (props) => {
     <main>
       <div className="catalog">
         <Filter {...props} />
-        <VisibleProductsList products={props.searchedProducts}/>
+        <VisibleProductsList {...props} products={props.searchedProducts} />
       </div>
     </main>
   )

@@ -21,7 +21,7 @@ export const Main = (props) => {
       <Login />
     </Route>
     <Route path="/favorite">
-      <Favorite />
+      <Favorite {...props}/>
     </Route>
     <Route path="/stock">
       <Stock />

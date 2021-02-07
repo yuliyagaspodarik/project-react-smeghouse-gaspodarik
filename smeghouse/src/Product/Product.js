@@ -1,12 +1,14 @@
-import React from 'react';
-import {useParams, Link} from "react-router-dom";
-import {QuantityCounter} from "./QuantityCounter/QuantityCounter";
-import "./Product.css";
-import {StockButton} from "../StockButton/StockButton";
+import React from "react";
+import { useParams, Link } from "react-router-dom";
 
-export const Product = ({ products }) => {
+import "./Product.css";
+import { QuantityCounter } from "./QuantityCounter/QuantityCounter";
+import { StockButton } from "../StockButton/StockButton";
+import { FavoriteButton } from "../FavoriteButton/FavoriteButton";
+
+export const Product = (props) => {
   const {productId} = useParams();
-  const product = products.find((product) => product.id == productId);
+  const product = props.products.find((product) => product.id == productId);
 
   return (
     <main className="product">
@@ -22,7 +24,7 @@ export const Product = ({ products }) => {
           </Link>
           <div className="cart__image">
             <img src={product.url} alt="Изображение товара"/>
-            <span className={!product.select ? 'fa-heart-o' : ' fa-heart'}/>
+            <FavoriteButton product={product} dispatch={props.dispatch}/>
           </div>
           <div className="cart__info">
             <div className="cart__title">
@@ -34,7 +36,7 @@ export const Product = ({ products }) => {
             </div>
             <QuantityCounter/>
             <div>
-              <StockButton className={"cart__button"} />
+              <StockButton className="cart__button" />
             </div>
             <div className="cart__description">
               <h4>Описание</h4>
