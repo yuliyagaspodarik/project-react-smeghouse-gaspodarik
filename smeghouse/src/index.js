@@ -7,12 +7,12 @@ import { Provider } from "react-redux";
 import reducer from "./reducers/reducer";
 import { initState } from "./reducers/actions";
 import { getData } from "./api/requests";
-import App from "./App";
+import App from "./app/App";
 import "./index.css";
 
 const store = createStore(reducer);
 
-const initStateData = async () => {
+(async function initStateData() {
   const data = {
     products: await getData("products"),
     filters: await getData("filters"),
@@ -20,9 +20,7 @@ const initStateData = async () => {
   };
 
   store.dispatch(initState(data));
-};
-
-initStateData();
+})();
 
 ReactDOM.render(
   <React.StrictMode>

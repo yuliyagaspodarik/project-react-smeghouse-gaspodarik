@@ -1,0 +1,43 @@
+.catalog__categories {
+    width: 25%;
+    padding: 1rem;
+    color: gray;
+    font-size: 1rem;
+    font-family: 'Caveat', cursive;
+}
+
+.catalog__categories h2 {
+    margin-top: 0;
+}
+
+.catalog__categories ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.catalog__categories-item {
+    font-family: 'Poiret One', cursive;
+    font-size: 1.3rem;
+}
+
+.catalog__categories-item:hover {
+    cursor: pointer;
+}
+
+.catalog__categories-item input {
+    margin-right: 0.5rem;
+}
+
+.catalog__categories-item input {
+    background-color: mediumseagreen;
+}
+@media (max-width: 54rem) {
+    .catalog__categories {
+        width: 80%;
+    }
+
+    .catalog__categories {
+        padding: 0 0.5rem;
+        font-size: 0.8rem;
+    }
+}

@@ -1,4 +1,4 @@
-import { abc } from "../api/helpers";
+import abc from "../api/helpers";
 
 const initialState = {
   products: [],
@@ -9,7 +9,7 @@ const initialState = {
   stock: []
 };
 
-export const reducer = (state  = initialState, action) => {
+function reducer(state  = initialState, action) {
   switch (action.type) {
     case "INIT_STATE":
       return {
@@ -89,6 +89,6 @@ export const reducer = (state  = initialState, action) => {
     default:
       return state;
   }
-};
+}
 
 export default reducer

@@ -1,0 +1,29 @@
+.catalog__products {
+    display: flex;
+    width: 75%;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding: 1rem;
+}
+
+.catalog__product {
+    width: 200px;
+    height: 420px;
+    margin: 1rem;
+    box-shadow: 2px 1px 3px 1px rgba(89, 87, 87, 0.5);
+}
+
+.catalog__product a {
+    text-decoration: none;
+}
+
+@media (max-width: 54rem) {
+    .catalog__products {
+        width: 80%;
+    }
+
+    .catalog__product {
+        width: 150px;
+        height: 350px;
+    }
+}

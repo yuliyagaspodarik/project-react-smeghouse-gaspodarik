@@ -1,48 +1,62 @@
-export const initState = (data) => ({
-  type: "INIT_STATE",
-  payload: {
-    data
-  }
-});
+export function initState(data) {
+  return {
+    type: "INIT_STATE",
+    payload: {
+      data
+    }
+  };
+}
 
-export const searchProducts = (searchedProducts) => ({
-  type: "SEARCH_PRODUCTS",
-  payload: {
-    searchedProducts
-  }
-});
+export function searchProducts(searchedProducts) {
+  return {
+    type: "SEARCH_PRODUCTS",
+    payload: {
+      searchedProducts
+    }
+  };
+}
 
-export const toggleFilter = (filter) => ({
-  type: "TOGGLE_FILTER",
-  payload: {
-    filter
-  }
-});
+export function toggleFilter(filter) {
+  return {
+    type: "TOGGLE_FILTER",
+    payload: {
+      filter
+    }
+  };
+}
 
-export const toggleAll = (checked) => ({
-  type: "TOGGLE_ALL",
-  payload: {
-    checked
-  }
-});
+export function toggleAll(checked) {
+  return {
+    type: "TOGGLE_ALL",
+    payload: {
+      checked
+    }
+  };
+}
 
-export const checkCategory = (filterName) => ({
-  type: "CHECK_CATEGORY",
-  payload: {
-    filterName
-  }
-});
+export function checkCategory(filterName) {
+  return {
+    type: "CHECK_CATEGORY",
+    payload: {
+      filterName
+    }
+  };
+}
 
-export const addToFavorite = (article) => ({
-  type: "ADD_TO_FAVORITE",
-  payload: {
-    article
-  }
-});
+export function addToFavorite(article) {
+  return {
+    type: "ADD_TO_FAVORITE",
+    payload: {
+      article
+    }
+  };
+}
 
-export const addToStock = (article) => ({
-  type: "ADD_TO_STOCK",
-  payload: {
-    article
-  }
-});
+export function addToStock(article) {
+  return {
+    type: "ADD_TO_STOCK",
+    payload: {
+      article
+    }
+  };
+}
