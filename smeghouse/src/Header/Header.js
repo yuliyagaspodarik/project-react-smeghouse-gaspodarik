@@ -18,7 +18,15 @@ export const Header = (props) => {
           <ul className="header__buttons">
             <li><Link to="/login" className="fa fa-user" rel="noopener noreferrer"/></li>
             <li><Link to="/favorite" className="fa fa-heart" rel="noopener noreferrer"/></li>
-            <li><Link to="/stock" className="fa fa-shopping-cart" rel="noopener noreferrer"/></li>
+            <li>
+              <Link
+                to="/stock"
+                className="fa fa-shopping-cart"
+                rel="noopener noreferrer"
+              >
+                <span className="header__stock">{props.stock.length !== 0 ? props.stock.length : null}</span>
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
