@@ -1,0 +1,40 @@
+.notfound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poiret One', cursive;
+}
+
+.notfound__message {
+    margin: 1rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.notfound__link a {
+    padding: 0.5rem 2rem;
+    border-radius: 30px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 25rem) {
+    .notfound h2 {
+        font-size: 1.4rem;
+    }
+
+    .notfound h3 {
+        font-size: 1.2rem;
+    }
+
+    .notfound__message {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    .notfound__link a {
+        display: block;
+    }
+}
