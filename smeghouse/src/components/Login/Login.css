@@ -1,0 +1,56 @@
+.auth {
+    width: 35%;
+    margin: 1rem auto;
+    font-family: 'Poiret One', cursive;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.auth__title {
+    font-weight: 600;
+}
+
+.auth__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    border-radius: 10px;
+    box-shadow: 2px 1px 3px 1px rgba(89, 87, 87, 0.5);
+}
+
+.auth__form-input,
+.auth__form-button {
+    margin: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.auth__form-button-exit {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.auth__form-input::-webkit-input-placeholder {
+    font-family: 'Poiret One', cursive;
+}
+
+.auth__form-input::-moz-placeholder {
+    font-family: 'Poiret One', cursive;
+}
+
+@media (max-width: 38rem) {
+    .auth {
+        width: 80%;
+        font-size: 0.8rem;
+    }
+
+    .auth__title {
+        font-size: 1.2rem;
+    }
+
+    .auth__form-input,
+    .auth__form-button {
+        margin: 0;
+        font-size: 0.7rem;
+    }
+}

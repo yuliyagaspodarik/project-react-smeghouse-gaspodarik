@@ -28,9 +28,6 @@
     margin-right: 0.5rem;
 }
 
-.catalog__categories-item input {
-    background-color: mediumseagreen;
-}
 @media (max-width: 54rem) {
     .catalog__categories {
         width: 80%;

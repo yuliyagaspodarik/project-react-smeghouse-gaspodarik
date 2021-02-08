@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Search from "./Search/Search";
 import "./Header.css";
 
-function Header(props) {
+function Index(props) {
   return (
     <header>
       <div className="header">
@@ -30,4 +30,4 @@ function Header(props) {
   );
 }
 
-export default Header;
+export default Index;
