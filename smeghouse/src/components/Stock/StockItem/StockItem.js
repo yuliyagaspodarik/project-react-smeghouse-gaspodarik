@@ -7,7 +7,7 @@ function StockItem(props) {
   const [count, setCount] = useState(1);
 
   return (
-    <div className="stock-products__item">
+    <div id="stock-products__item" className="stock-products__item">
       <div className="stock-products__item-product">
         <ProductPreview
           product={props.product}
@@ -36,7 +36,8 @@ function StockItem(props) {
           </button>
         </div>
         <div className="quantity-price">
-          Стоимость: <span>{props.product.price * count} Br</span>
+          <p>Стоимость:</p>
+          <p className="quantity">{props.product.price * count} Br</p>
         </div>
       </div>
     </div>

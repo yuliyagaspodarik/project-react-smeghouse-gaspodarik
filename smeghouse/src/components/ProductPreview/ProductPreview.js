@@ -7,9 +7,9 @@ import "./ProductPreview.css";
 
 function ProductPreview(props) {
   return (
-    <section>
-      <div className="cart-preview">
-        <div className="cart-preview__image">
+    <section id="product">
+      <div id="cart-preview" className="cart-preview">
+        <div id="cart-preview__image" className="cart-preview__image">
           <img src={props.product.url} alt="Изображение товара"/>
           <FavoriteButton
             select={props.product.select}
@@ -17,7 +17,7 @@ function ProductPreview(props) {
             dispatch={props.dispatch}
           />
         </div>
-        <div className="cart-preview__description">
+        <div id="cart-preview__description" className="cart-preview__description">
           <p>{props.product.price} Br</p>
           <h4>{props.product.name}</h4>
         </div>

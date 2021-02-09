@@ -2,7 +2,7 @@ section {
     height: 100%;
 }
 
-.cart-preview {
+#product #cart-preview.cart-preview {
     position: relative;
     height: 100%;
     display: flex;
@@ -15,64 +15,66 @@ section {
     font-family: 'Poiret One', cursive;
 }
 
-.cart-preview div {
+#cart-preview.cart-preview div {
     padding: 0 0.5rem 0.5rem;
 }
 
-.cart-preview__image {
+#product #cart-preview #cart-preview__image.cart-preview__image {
     width: 100%;
     height: 50%;
     margin: 1rem;
     overflow: hidden;
 }
 
-.cart-preview__image img {
-    width: 90%;
+#cart-preview #cart-preview__image img {
+    width: 80%;
     transition: transform .4s ease-out;
 }
 
-.cart-preview:hover .cart-preview__image img {
+#cart-preview:hover #cart-preview__image img {
     transform: scale(1.05);
 }
 
-.cart-preview__image span {
+#cart-preview__image.cart-preview__image span {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
     font-family: FontAwesome;
 }
 
-.cart-preview__image span:hover {
+#cart-preview__image span:hover {
     cursor: pointer;
 }
 
-.cart-preview__description p {
+#cart-preview #cart-preview__description p {
     margin: 0;
     padding: 0.5rem;
     font-size: 2rem;
     font-weight: 600;
 }
 
-.cart-preview__description h4 {
+#cart-preview #cart-preview__description h4 {
     margin: 0;
     padding: 0 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
-.cart-preview__link {
+#cart-preview .cart-preview__link {
     color: black;
     letter-spacing: 2px;
 }
 
-.cart-preview__link:hover {
+#cart-preview .cart-preview__link:hover {
     border-bottom: 1px dotted black;
 }
 
 @media (max-width: 54rem) {
-    .cart-preview__description h4 {
+    #cart-preview #cart-preview__description h4 {
         font-size: 0.8rem;
     }
 
-    .cart-preview__description p {
+    #cart-preview #cart-preview__description p {
         font-size: 1.5rem;
     }
 }

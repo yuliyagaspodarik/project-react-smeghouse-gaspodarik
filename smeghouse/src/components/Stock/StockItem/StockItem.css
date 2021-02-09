@@ -33,7 +33,16 @@
     margin-right: 2rem;
 }
 
-.quantity-price span {
+#stock-products__item .quantity-counter__button {
+    border: none;
+    border-radius: 2px;
+}
+
+.quantity-price {
+    text-align: center;
+}
+
+.quantity-price .quantity {
     font-size: 1.5rem;
     font-weight: 600;
 }
@@ -44,4 +53,8 @@
     margin: 0;
     padding: 0;
     text-align: center;
+}
+
+#stock-products__item .quantity-price {
+    width: 150px;
 }
