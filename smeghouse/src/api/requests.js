@@ -12,3 +12,15 @@ export async function getData(request) {
 
   return data;
 }
+
+export async function getUserData(userId) {
+  const userResponse = await fetch(`${apiRoot}/users/${userId}/`);
+
+  if (!userResponse.ok) {
+    return;
+  }
+
+  const user = await userResponse.json();
+
+  return user;
+}

@@ -17,8 +17,8 @@ function reducer(state  = initialState, action) {
         filters: action.payload.data.filters,
         contacts: action.payload.data.contacts,
         searchedProducts: action.payload.data.products.sort(abc),
-        favorites: state.favorites,
-        stock: state.stock
+        favorites: action.payload.data.favorites.sort(abc),
+        stock: action.payload.data.stock.sort(abc),
       };
     case "SEARCH_PRODUCTS":
       const searchedProductsInSearch = state.products.filter(product => (JSON.stringify(product.name) + JSON.stringify(product.article) + JSON.stringify(product.category)).toLowerCase().indexOf(action.payload.searchedProducts.toLowerCase()) !== -1).sort(abc);
