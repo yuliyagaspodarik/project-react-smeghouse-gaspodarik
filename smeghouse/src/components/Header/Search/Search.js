@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-import { searchProducts } from "../../../reducers/actions";
+import { searchProducts } from "../../../actions/actions";
 import "./Search.css";
 
 function Search(props) {

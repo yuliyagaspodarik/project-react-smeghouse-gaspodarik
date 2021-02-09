@@ -15,3 +15,7 @@ div.form-row {
 .auth button {
     font-weight: 600;
 }
+
+.auth input {
+    font-size: 1.2rem;
+}

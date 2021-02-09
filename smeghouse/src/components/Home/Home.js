@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { checkCategory } from "../../reducers/actions";
+import { checkCategory } from "../../actions/actions";
 import "./Home.css";
 
 function Home(props) {
