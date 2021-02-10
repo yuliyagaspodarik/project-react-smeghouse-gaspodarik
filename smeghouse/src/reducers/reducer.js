@@ -102,8 +102,21 @@ function reducer(state  = initialState, action) {
         isLogin: state.isLogin,
         user: {id: state.user.id, userName: state.user.userName, password: state.user.password, favorites: state.user.favorites, stock: newStock}
       };
-    case "LOG_IN": break;
+    case "LOG_IN":
+      return {
+        products: state.products,
+        filters: state.filters,
+        contacts: state.contacts,
+        searchedProducts: state.searchedProducts,
+        favorites: state.favorites,
+        stock: state.stock,
+        isLogin: !state.isLogin,
+        user: {...action.payload.user}
+      };
     case "LOG_OUT":
+      state.products.filter(product => action.payload.user.stock.includes(product.article)).map(product => product.inStock = !product.inStock);
+      state.products.filter(product => action.payload.user.favorites.includes(product.article)).map(product => product.select = !product.select);
+
       return {
         products: state.products,
         filters: state.filters,

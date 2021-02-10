@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
-import {logOut} from "../../actions/actions";
+import { logIn, logOut } from "../../actions/actions";
 import "./Login.css";
 
 function Login(props) {
@@ -17,21 +17,27 @@ function Login(props) {
     }
 
     setValidated(true);
+    event.preventDefault();
+    props.dispatch(logIn({
+      userName: event.currentTarget.userName.value,
+      password: event.currentTarget.password.value,
+      stock: props.stock.map(product => product.article),
+      favorites: props.favorites.map(product => product.article)
+    }));
   };
 
   const handleClick = () => {
-    props.dispatch(logOut(props.user, ));
+    props.dispatch(logOut(props.user));
   };
 
   return (
     <main>
       {props.isLogin ? (
-        <div className="login-message">
-          <p>
-            {`Приятных покупок, ${props.user.userName}!`}
-          </p>
-          <Button type="button" onClick={handleClick}>Выйти</Button>
-        </div>) :
+          <div className="login-message">
+            <p>{`Приятных покупок, ${props.user.userName}!`}</p>
+            <Button type="button" onClick={handleClick}>Выйти</Button>
+          </div>
+        ) :
         <div className="auth">
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Form.Row>
@@ -41,6 +47,7 @@ function Login(props) {
                   required
                   type="email"
                   placeholder="Введите email"
+                  name="userName"
                 />
                 <Form.Control.Feedback>Отлично!</Form.Control.Feedback>
                 <Form.Control.Feedback type="invalid">
@@ -55,6 +62,7 @@ function Login(props) {
                   required
                   type="password"
                   placeholder="Введите пароль"
+                  name="password"
                 />
                 <Form.Control.Feedback>Отлично!</Form.Control.Feedback>
                 <Form.Control.Feedback type="invalid">

@@ -37,10 +37,41 @@ export async function updateUserData(userId, patch) {
   if (!userResponse.ok) {
     return;
   }
-/*
-  const userPatch = await userResponse.json();
-  console.log('patch', userPatch);
-  return userPatch;*/
+
+  const updateUser = await userResponse.json();
+
+  return updateUser;
 }
 
+export async function getUser(newUser) {
+  const users = await getData("users");
 
+  const user = users.find(user => user.userName === newUser.userName && user.password === newUser.password);
+
+  return user;
+}
+
+export async function addUserData(user) {
+  const userInBase = await getUser(user);
+
+  if (userInBase) {
+    await updateUserData(userInBase.id, user);
+  } else {
+
+    const addResponse = await fetch(`${apiRoot}/users/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
+
+    if (!addResponse.ok) {
+      return;
+    }
+
+    const userInBaseResponse = await addResponse.json();
+
+    return userInBaseResponse;
+  }
+}

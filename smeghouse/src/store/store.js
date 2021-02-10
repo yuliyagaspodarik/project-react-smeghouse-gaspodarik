@@ -1,7 +1,7 @@
-import {createStore} from "redux";
+import { createStore } from "redux";
 import reducer from "../reducers/reducer";
-import {getData, getUserData} from "../api/requests";
-import {initState} from "../actions/actions";
+import { getData, getUserData } from "../api/requests";
+import { initState } from "../actions/actions";
 
 const store = createStore(reducer);
 
@@ -23,7 +23,19 @@ const store = createStore(reducer);
     const userStock = data.products.filter(product => userData.stock.includes(product.article));
     userStock.map(product => product.inStock = !product.inStock);
 
-    data = {...data, favorites: userFavorites, stock: userStock, isLogin: true, user: {id: userData.id, userName: userData.userName, password: userData.password, favorites: userData.favorites, stock: userData.stock}};
+    data = {
+      ...data,
+      favorites: userFavorites,
+      stock: userStock,
+      isLogin: true,
+      user: {
+        id: userData.id,
+        userName: userData.userName,
+        password: userData.password,
+        favorites: userData.favorites,
+        stock: userData.stock
+      }
+    };
     store.dispatch(initState(data));
   } else {
     store.dispatch(initState(data));

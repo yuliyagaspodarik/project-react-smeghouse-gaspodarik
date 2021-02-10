@@ -1,4 +1,4 @@
-import {updateUserData} from "../api/requests";
+import { updateUserData, addUserData } from "../api/requests";
 
 export function initState(data) {
   return {
@@ -67,6 +67,19 @@ export function logOut(user) {
   updateUserData(user.id, user);
   return {
     type: "LOG_OUT",
-    payload: {}
+    payload: {
+      user
+    }
+  };
+}
+
+export function logIn(user) {
+  const resp = addUserData(user);
+  return {
+    type: "LOG_IN",
+    payload: {
+      user,
+      resp
+    }
   };
 }
