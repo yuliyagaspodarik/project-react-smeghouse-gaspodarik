@@ -24,3 +24,23 @@ export async function getUserData(userId) {
 
   return user;
 }
+
+export async function updateUserData(userId, patch) {
+  const userResponse = await fetch(`${apiRoot}/users/${userId}/`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(patch),
+  });
+
+  if (!userResponse.ok) {
+    return;
+  }
+/*
+  const userPatch = await userResponse.json();
+  console.log('patch', userPatch);
+  return userPatch;*/
+}
+
+

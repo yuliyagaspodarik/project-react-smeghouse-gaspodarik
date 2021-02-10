@@ -6,7 +6,9 @@ const initialState = {
   filters: [],
   contacts: [],
   favorites: [],
-  stock: []
+  stock: [],
+  isLogin: false,
+  user: {}
 };
 
 function reducer(state  = initialState, action) {
@@ -19,6 +21,8 @@ function reducer(state  = initialState, action) {
         searchedProducts: action.payload.data.products.sort(abc),
         favorites: action.payload.data.favorites.sort(abc),
         stock: action.payload.data.stock.sort(abc),
+        isLogin: action.payload.data.isLogin,
+        user: action.payload.data.user
       };
     case "SEARCH_PRODUCTS":
       const searchedProductsInSearch = state.products.filter(product => (JSON.stringify(product.name) + JSON.stringify(product.article) + JSON.stringify(product.category)).toLowerCase().indexOf(action.payload.searchedProducts.toLowerCase()) !== -1).sort(abc);
@@ -30,7 +34,9 @@ function reducer(state  = initialState, action) {
         contacts: state.contacts,
         searchedProducts: searchedProductsInSearch,
         favorites: state.favorites,
-        stock: state.stock
+        stock: state.stock,
+        isLogin: state.isLogin,
+        user: state.user
       };
     case "TOGGLE_FILTER":
       const filtersToggleFilters = state.filters.map(filter => filter.name === action.payload.filter.name ? {name: filter.name, checked:!filter.checked} : filter);
@@ -42,7 +48,9 @@ function reducer(state  = initialState, action) {
         contacts: state.contacts,
         searchedProducts: searchedProductsToggleFilters,
         favorites: state.favorites,
-        stock: state.stock
+        stock: state.stock,
+        isLogin: state.isLogin,
+        user: state.user
       };
     case "TOGGLE_ALL":
       return {
@@ -51,7 +59,9 @@ function reducer(state  = initialState, action) {
         contacts: state.contacts,
         searchedProducts: action.payload.checked ? state.products : [],
         favorites: state.favorites,
-        stock: state.stock
+        stock: state.stock,
+        isLogin: state.isLogin,
+        user: state.user
       };
     case "CHECK_CATEGORY":
       return {
@@ -60,10 +70,13 @@ function reducer(state  = initialState, action) {
         contacts: state.contacts,
         searchedProducts: state.products.filter(product => product.category === action.payload.filterName),
         favorites: state.favorites,
-        stock: state.stock
+        stock: state.stock,
+        isLogin: state.isLogin,
+        user: state.user
       };
     case "ADD_TO_FAVORITE":
       state.products.filter(product => product.article === action.payload.article).map(product => product.select = !product.select);
+      const newFavorite = state.products.filter(product => product.select).map(product => product.article);
 
       return {
         products: state.products,
@@ -71,10 +84,13 @@ function reducer(state  = initialState, action) {
         contacts: state.contacts,
         searchedProducts: state.searchedProducts,
         favorites: state.products.filter(product => product.select),
-        stock: state.stock
+        stock: state.stock,
+        isLogin: state.isLogin,
+        user: {id: state.user.id, userName: state.user.userName, password: state.user.password, favorites: newFavorite, stock: state.user.stock}
       };
     case "ADD_TO_STOCK":
       state.products.filter(product => product.article === action.payload.article).map(product => product.inStock = !product.inStock);
+      const newStock = state.products.filter(product => product.inStock).map(product => product.article);
 
       return {
         products: state.products,
@@ -82,13 +98,25 @@ function reducer(state  = initialState, action) {
         contacts: state.contacts,
         searchedProducts: state.searchedProducts,
         favorites: state.favorites,
-        stock: state.products.filter(product => product.inStock)
+        stock: state.products.filter(product => product.inStock),
+        isLogin: state.isLogin,
+        user: {id: state.user.id, userName: state.user.userName, password: state.user.password, favorites: state.user.favorites, stock: newStock}
       };
     case "LOG_IN": break;
-    case "LOG_OUT": break;
+    case "LOG_OUT":
+      return {
+        products: state.products,
+        filters: state.filters,
+        contacts: state.contacts,
+        searchedProducts: state.searchedProducts,
+        favorites: state.favorites,
+        stock: state.stock,
+        isLogin: !state.isLogin,
+        user: {}
+      };
     default:
       return state;
   }
 }
 
-export default reducer
+export default reducer;

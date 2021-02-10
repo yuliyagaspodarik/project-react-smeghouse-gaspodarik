@@ -1,15 +1,21 @@
+.login-message,
 .auth {
     width: 90%;
     margin: 1rem auto;
     font-family: 'Poiret One', cursive;
-    font-size: 1rem;
-    font-weight: 600;
     text-align: center;
 }
 
-div.form-row {
+.login-message {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.auth {
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .auth button {
@@ -18,4 +24,9 @@ div.form-row {
 
 .auth input {
     font-size: 1.2rem;
+}
+
+div.form-row {
+    display: flex;
+    justify-content: center;
 }

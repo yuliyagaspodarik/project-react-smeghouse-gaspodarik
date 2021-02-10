@@ -1,3 +1,5 @@
+import {updateUserData} from "../api/requests";
+
 export function initState(data) {
   return {
     type: "INIT_STATE",
@@ -58,5 +60,13 @@ export function addToStock(article) {
     payload: {
       article
     }
+  };
+}
+
+export function logOut(user) {
+  updateUserData(user.id, user);
+  return {
+    type: "LOG_OUT",
+    payload: {}
   };
 }

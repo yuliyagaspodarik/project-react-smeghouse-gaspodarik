@@ -18,7 +18,7 @@ function Main(props) {
         <Products {...props} />
       </Route>
       <Route path="/login">
-        <Login/>
+        <Login isLogin={props.isLogin} dispatch={props.dispatch} user={props.user} />
       </Route>
       <Route path="/favorite">
         <Favorite favorites={props.favorites} dispatch={props.dispatch} />

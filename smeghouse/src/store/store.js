@@ -21,9 +21,9 @@ const store = createStore(reducer);
     userFavorites.map(product => product.select = !product.select);
 
     const userStock = data.products.filter(product => userData.stock.includes(product.article));
+    userStock.map(product => product.inStock = !product.inStock);
 
-    data = {...data, favorites: userFavorites, stock: userStock};
-
+    data = {...data, favorites: userFavorites, stock: userStock, isLogin: true, user: {id: userData.id, userName: userData.userName, password: userData.password, favorites: userData.favorites, stock: userData.stock}};
     store.dispatch(initState(data));
   } else {
     store.dispatch(initState(data));
