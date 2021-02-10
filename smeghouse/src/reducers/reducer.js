@@ -109,8 +109,8 @@ function reducer(state  = initialState, action) {
         filters: state.filters,
         contacts: state.contacts,
         searchedProducts: state.searchedProducts,
-        favorites: state.favorites,
-        stock: state.stock,
+        favorites: [],
+        stock: [],
         isLogin: !state.isLogin,
         user: {}
       };
