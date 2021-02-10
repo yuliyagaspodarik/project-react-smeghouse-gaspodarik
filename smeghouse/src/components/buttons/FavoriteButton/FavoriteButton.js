@@ -1,6 +1,6 @@
 import React from "react";
 
-import { addToFavorite } from "../../../actions/actions";
+import { addToFavorite } from "../../../store/actions";
 
 function FavoriteButton(props) {
   return (

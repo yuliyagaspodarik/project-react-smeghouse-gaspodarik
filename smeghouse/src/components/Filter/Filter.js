@@ -1,6 +1,6 @@
 import React from "react";
 
-import { toggleAll, toggleFilter } from "../../actions/actions";
+import { toggleAll, toggleFilter } from "../../store/actions";
 import abc from "../../api/helpers";
 import "./Filter.css";
 

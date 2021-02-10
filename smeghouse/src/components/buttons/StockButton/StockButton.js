@@ -1,6 +1,6 @@
 import React from "react";
 
-import { addToStock } from "../../../actions/actions";
+import { addToStock } from "../../../store/actions";
 import "./StockButton.css";
 
 function StockButton(props) {

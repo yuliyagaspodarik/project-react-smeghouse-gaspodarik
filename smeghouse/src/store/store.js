@@ -1,7 +1,7 @@
 import { createStore } from "redux";
-import reducer from "../reducers/reducer";
+import reducer from "./reducer";
 import { getData, getUserData } from "../api/requests";
-import { initState } from "../actions/actions";
+import { initState } from "./actions";
 
 const store = createStore(reducer);
 
